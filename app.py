@@ -43,7 +43,7 @@ def predict_image(input_data: ImageInput):
     img_array = preprocess_base64_image(input_data.image_base64)
 
     prediction = model.predict(img_array)
-    print("Raw prediction:", prediction)
+    # print("Raw prediction:", prediction)
 
     if prediction.shape[1] == 1:
         confidence = float(prediction[0][0])
@@ -58,9 +58,9 @@ def predict_image(input_data: ImageInput):
     else:
         predicted_label = "Uncertain"
 
-    print("Predicted index:", predicted_class_index)
-    print("Predicted label:", predicted_label)
-    print("Confidence:", confidence_score)
+    # print("Predicted index:", predicted_class_index)
+    # print("Predicted label:", predicted_label)
+    # print("Confidence:", confidence_score)
 
     return PredictionResponse(
         prediction=predicted_label,
